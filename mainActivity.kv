@@ -1,0 +1,87 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+MDBoxLayout:
+    md_bg_color: get_color_from_hex("#282828")
+    
+    MDNavigationRail:
+        md_bg_color: get_color_from_hex("#3c3836")
+        type: "unselected"
+        width: "240dp"
+
+        MDNavigationRailItem:
+            text: "Video"
+            icon: "video"
+            on_release: app.setScreen("videoScreen")
+        
+        MDNavigationRailItem:
+            text: "Library"
+            icon: "bookshelf"
+        
+        MDNavigationRailItem:
+            text: "Setings"
+            icon: "cogs"
+            on_release: app.setScreen("SetingsScreen")
+
+
+
+<SetingsScreen>:
+    MDBoxLayout:
+        md_bg_color: get_color_from_hex("#3c3836")
+        orientation: 'vertical'
+
+        MDRectangleFlatButton:
+            text: "TEST"
+
+<videoScreen>:
+
+#<VideoScreen>:
+#    AnchorLayout:
+#        md_bg_color: get_color_from_hex("#3c3836")
+#        anchor_x: "center"
+#        anchor_y: "top"
+#        padding: "22dp"
+#
+#        MDTextFieldRound:
+#            spacing: "20px"
+#            hint_text: "Enter video or chanel name"
+#           fill_color_focus: get_color_from_hex("#ffff")
+#        
+#    
+#    AnchorLayout:
+#       anchor_x: "center"
+#        anchor_y: "center"#
+#
+#        ScrollView:
+#            size_hint: 1, .8
+#            MDList:
+#                spacing: "10dp"
+#                MDCard:
+#                    orientation: "vertical"
+#                    size_hint: .5, None
+#                    pos_hint: {"center_x": .5, "center_y": .5}
+#
+#                    BoxLayout:
+#                        orientation: "horizontal"
+#                        
+#                        FitImage:
+#                           size_hint: .5, None
+#                            source: "mqdefault.jpg"
+#                        
+#                        MDBoxLayout:
+#                            orientation: "vertical"
+#                            md_bg_color: get_color_from_hex("#3c3836")
+#                            MDTextButton:
+#                                font_style: "H6"
+#                                halig: "left"
+#                                color: get_color_from_hex("#ebdbb2")
+#                                text: "Video Name"
+#                           
+#                            MDLabel:
+#                                font_style: "Caption"
+#                                color: get_color_from_hex("#ebdbb2")
+#                                text: "Описание ssadsadsadsadsads"
+#                            
+#                            MDTextButton:
+#                                font_style: "Caption"
+#                                color: get_color_from_hex("#ebdbb2")
+#                                text: "chanel name"
